@@ -4,25 +4,10 @@ import org.eclipse.swt.widgets.*;
 import org.eclipse.swt.*;
 import org.eclipse.swt.layout.*;
 
-class HistoryPane {
-    TabItem tabItem;
-    Composite container;
+class HistoryPane extends VersesPane {
+
     HistoryPane(TabFolder parent) {
-        tabItem = new TabItem(parent, SWT.NONE);
-        tabItem.setText("Előzmények");
-        container = new Composite(parent, SWT.NONE);
-        tabItem.setControl(container);
-        createControls();
-    }
-
-    List list;
-    Text text;
-
-    private void createControls() {
-        container.setLayout(new GridLayout(1, false));
-        list = new List(container, SWT.BORDER | SWT.V_SCROLL );
-        GridData listData = new GridData(SWT.FILL, SWT.FILL, true, true, 2, 1);
-        list.setLayoutData(listData);
+        super(parent, "Előzmények");
 
         list.addListener(SWT.Selection, new Listener() {
             @Override public void handleEvent(Event e) {
@@ -32,13 +17,7 @@ class HistoryPane {
             }
         });
 
-        text = new Text(container, SWT.BORDER | SWT.READ_ONLY | SWT.MULTI | SWT.WRAP);
-
-        GridData textData = new GridData(SWT.FILL, SWT.FILL, true, false, 1, 2);
-        text.setLayoutData(textData);
         
-        // TODO copy button
-        // TODO share on Facebook button
     }
     
 

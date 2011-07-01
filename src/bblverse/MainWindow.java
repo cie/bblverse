@@ -1,8 +1,10 @@
 package bblverse;
 
+
 import org.eclipse.swt.widgets.*;
 import org.eclipse.swt.*;
 import org.eclipse.swt.layout.*;
+import java.util.*;
 
 class MainWindow {
     Shell shell;
@@ -25,16 +27,14 @@ class MainWindow {
     }
 
     TabFolder tabs;
+    java.util.List<Pane> panes = new ArrayList<Pane>();
     HistoryPane historyPane;
 
     private void createTabs() {
         shell.setLayout(new FillLayout());
         tabs = new TabFolder(shell, SWT.TOP | SWT.BORDER);
         historyPane = new HistoryPane(tabs);
-    }
-    private void createHistoryPane(Composite parent) {
-        GridLayout layout = new GridLayout(1, false);
-        parent.setLayout(layout);
+        panes.add(historyPane);
     }
     
     void update() {
@@ -42,7 +42,9 @@ class MainWindow {
     }
 
     void verseSelected(int index) {
-        historyPane.verseSelected(index);
+        for (Pane p : panes) {
+            p.verseSelected(index);
+        }
         shell.layout(true, true);
     }
 }
