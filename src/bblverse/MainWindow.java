@@ -6,7 +6,6 @@ import org.eclipse.swt.layout.*;
 
 class MainWindow {
     Shell shell;
-    HistoryPane history;
 
     MainWindow() {
         shell = new Shell(Main.display, SWT.BORDER | SWT.CLOSE | SWT.MIN | SWT.RESIZE | SWT.TITLE );
@@ -36,6 +35,14 @@ class MainWindow {
     private void createHistoryPane(Composite parent) {
         GridLayout layout = new GridLayout(1, false);
         parent.setLayout(layout);
+    }
+    
+    void update() {
+        historyPane.update();
+    }
 
+    void verseSelected(int index) {
+        historyPane.verseSelected(index);
+        shell.layout(true, true);
     }
 }

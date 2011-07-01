@@ -18,7 +18,8 @@ public class BblTrayItem {
         trayItem.setVisible(true);
         trayItem.addSelectionListener(new SelectionListener() {
             @Override public void widgetDefaultSelected(SelectionEvent e) {
-                Main.window.shell.setVisible(true);
+                Main.window.shell.close();
+                Main.window.shell.open();
             }
             @Override public void widgetSelected(SelectionEvent e) {
                 toolTip.setVisible(!toolTip.isVisible());

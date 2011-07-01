@@ -37,7 +37,7 @@ public class Main {
     static BblTrayItem trayItem;
 
 
-    protected static void loadIcon() {
+    private static void loadIcon() {
         InputStream iconStream = null;
         iconStream = Main.class.getClassLoader().getResourceAsStream("bblverse/images/icon48.png");
         if (iconStream == null) {
@@ -47,6 +47,8 @@ public class Main {
         icon = new Image(Display.getDefault(), iconStream);
     }
 
-
+    static void verseFetched() {
+        window.update();
+    }
 
 }
