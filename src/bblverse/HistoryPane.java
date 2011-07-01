@@ -21,14 +21,16 @@ class HistoryPane extends VersesPane {
     }
     
 
-    void update() {
+    @Override void update() {
         int index = Engine.history.get(Engine.history.size()-1);
         list.add(Engine.verses.get(index),0);
         list.select(0);
         Main.window.verseSelected(index);
     }
 
-    void verseSelected(int index) {
+
+    @Override void verseSelected(int index) {
         text.setText(Engine.verses.get(index));
     }
+
 }

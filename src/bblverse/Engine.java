@@ -69,6 +69,8 @@ class Engine {
     static String verse;
     static String cite;
 
+    static int contextVerses = 10; // verses to show before and after
+
     static int readingSpeed = 100; // words per min
     static int thinkingTime = 5; // seconds
     static final int AVG_WORD_LENGTH = 5;

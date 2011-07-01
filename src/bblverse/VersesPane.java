@@ -6,6 +6,8 @@ import org.eclipse.swt.layout.*;
 
 abstract class VersesPane extends Pane {
 
+    final static int MAX_BUTTON_COUNT = 5;
+
     VersesPane(TabFolder parent, String title) {
         super(parent, title);
         container.setLayout(new GridLayout(1, false));
@@ -15,7 +17,7 @@ abstract class VersesPane extends Pane {
 
         text = new Text(container, SWT.BORDER | SWT.READ_ONLY | SWT.MULTI | SWT.WRAP);
 
-        GridData textData = new GridData(SWT.FILL, SWT.FILL, true, false, 1, 2);
+        GridData textData = new GridData(SWT.FILL, SWT.FILL, true, false, 1, MAX_BUTTON_COUNT);
         text.setLayoutData(textData);
         // TODO copy button
         // TODO share on Facebook button

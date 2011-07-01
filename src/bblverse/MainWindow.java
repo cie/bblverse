@@ -38,7 +38,9 @@ class MainWindow {
     }
     
     void update() {
-        historyPane.update();
+        for (Pane p : panes) {
+            p.update();
+        }
     }
 
     void verseSelected(int index) {
