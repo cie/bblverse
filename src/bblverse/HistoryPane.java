@@ -24,9 +24,13 @@ class HistoryPane {
         GridData listData = new GridData(SWT.FILL, SWT.FILL, true, true, 2, 1);
         list.setLayoutData(listData);
 
-        text = new Text(container, SWT.BORDER | SWT.READ_ONLY | SWT.V_SCROLL | SWT.MULTILINE)
+        text = new Text(container, SWT.BORDER | SWT.READ_ONLY | SWT.V_SCROLL | SWT.MULTI | SWT.WRAP);
 
-        GridData textBoxData = new 
+        GridData textData = new GridData(SWT.FILL, SWT.FILL, true, false, 1, 2);
+        text.setLayoutData(textData);
+        
+        // TODO copy button
+        // TODO share on Facebook button
     }
     
 }

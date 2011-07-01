@@ -29,7 +29,8 @@ class MainWindow {
     HistoryPane historyPane;
 
     private void createTabs() {
-        tabs = new TabFolder(shell, SWT.TOP);
+        shell.setLayout(new FillLayout());
+        tabs = new TabFolder(shell, SWT.TOP | SWT.BORDER);
         historyPane = new HistoryPane(tabs);
     }
     private void createHistoryPane(Composite parent) {

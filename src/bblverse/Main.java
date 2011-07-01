@@ -23,7 +23,7 @@ public class Main {
                 trayItem.showNewVerse();
             }
         });
-        trayItem.scheduleNewVerse();
+        //trayItem.scheduleNewVerse();
         while (!window.shell.isDisposed()) {
             if (!display.readAndDispatch()) display.sleep();
         }

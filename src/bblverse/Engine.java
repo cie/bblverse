@@ -51,13 +51,25 @@ class Engine {
     }
 
     static void fetchNewVerse() {
-        String line = verses.get(random.nextInt(verses.size()));
+        saveOldVerse();
+        index = random.nextInt(verses.size());
+        String line = verses.get(index);
         int p1 = line.indexOf(':'),
             p2 = line.indexOf(':', p1+1);
         cite = line.substring(0, p2); // so that second colon is not included
         verse = line.substring(p2+1); // so that space after colon is included
     }
 
+
+    static ArrayList<Integer> history = new ArrayList<Integer>();
+
+    private static void saveOldVerse() {
+        if (index != -1) {
+            history.add(index);
+        }
+    }
+
+    static int index = -1;
     static String verse;
     static String cite;
 
